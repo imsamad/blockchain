@@ -7,7 +7,8 @@ export class Blockchain {
   }
 
   public addBlock(data: any) {
-    this.chain.push(Block.mineBlock(this.chain[this.chain.length - 1], data));
+    const lastBlock = this.chain[this.chain.length - 1];
+    this.chain.push(Block.mineBlock(lastBlock, data));
     return this.chain[this.chain.length - 1];
   }
 
